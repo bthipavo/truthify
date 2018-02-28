@@ -1,0 +1,33 @@
+{
+  "name": "new-york-times-search",
+  "version": "1.0.0",
+  "description": "looks up articles",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iAmHaViK/New-York-Times-Search.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "loglevel": "^1.4.1",
+    "method-override": "^2.3.7",
+    "mysql": "^2.13.0",
+    "path": "^0.12.7",
+    "request": "^2.83.0",
+    "sequelize": "^3.30.2"
+  },
+  "devDependencies": {
+    "handlebars-helper-css": "^0.1.0"
+  },
+  "bugs": {
+    "url": "https://github.com/iAmHaViK/New-York-Times-Search/issues"
+  },
+  "homepage": "https://github.com/iAmHaViK/New-York-Times-Search#readme"
+}
