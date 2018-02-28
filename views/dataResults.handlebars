@@ -1,0 +1,20 @@
+<form class="create-form">
+	<div class="search" id="search-box">
+		<input type="text" class="searchTerm" placeholder="Search the News">
+		<button type="submit" class="searchButton bg-primary">
+			<i class="glyphicon glyphicon-search bg-primary"></i>
+		</button>
+	</div>
+</form>
+
+<h2>Search Results</h2>
+
+<ul>
+  {{#each news}}
+    {{#unless verified}}
+      {{> news/results}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+

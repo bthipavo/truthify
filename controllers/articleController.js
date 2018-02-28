@@ -14,6 +14,16 @@ module.exports = function(app) {
     res.render("index");
 });
 
+  app.get("/newsFilter", function(req, res) {
+    console.log("filter")
+    res.render("newsFilter", {layout: 'main'});
+});
+
+  app.get("/dataResults", function(req, res) {
+    console.log("data")
+    res.render("dataResults", {layout: 'main'});
+});
+
   app.get("/api/articles/:country", function(req, res) {
     var country = req.params.country;
     var apiKey = "353a8fddcaba4e7dafde4210fc1dc13c";
