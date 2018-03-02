@@ -15,8 +15,10 @@ module.exports = function(app) {
 });
 
   app.get("/newsFilter", function(req, res) {
-    console.log("filter")
-    res.render("newsFilter", {layout: 'main'});
+    console.log("filter");
+    hbsObject = {news: ["hello","how","you","doing"]}
+    res.render("newsFilter", {layout: 'main', data: hbsObject});
+    console.log(hbsObject)
 });
 
   app.get("/dataResults", function(req, res) {

@@ -35,6 +35,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(bodyParser.text({ type: "text/plain" }));
+app.use(express.static(__dirname + '/public'));
 
 // Set Handlebars as the view engine
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
@@ -43,6 +45,7 @@ app.set('view engine', 'handlebars');
 // Import routes and give the server access to them
 require('./controllers/articleController')(app);
 require('./controllers/usersController')(app);
+require('./api_routes/apiRoutes')(app);
 // can only figure out how to use one controller
 
 // Syncing our sequelize models and then starting our express app

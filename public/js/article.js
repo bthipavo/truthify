@@ -1,5 +1,25 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
+// var hbsObject = {}
 $(function() {
+  
+  $("#search-button").on("click", function(event) {
+    event.preventDefault();
+    var searchLog = {
+      Body: $("#search-box").val().trim()
+    };
+    console.log("searching for " +searchLog.Body)
+
+    $.post("/search", searchLog, function(data) {
+      
+      var hbsObject = {
+        news: data
+      }
+      // console.log(data)
+      console.log(hbsObject.news)
+
+    });
+  });
+
   $(".change-fake").on("click", function(event) {
     var id = $(this).data("id");
     var newfake = $(this).data("newfake");
@@ -25,7 +45,7 @@ $(function() {
       name: $("#article").val().trim(),
       sleepy: $("[name=fake]:checked").val().trim()
     };
-    // Send the POST request.
+   n// Send the POST request.
     $.ajax("/api/article", {
       type: "POST",
       data: newFake
